@@ -1,13 +1,12 @@
 import React from 'react';
 import WeatherLocation from './WeatherLocation';
 import PropTypes from 'prop-types';
-//import { Container, Row, Col, Card,Button } from 'react-bootstrap';
-//import ForecastExtended from './ForecastExtended';
+
 
 
 const LocationList = ({ cities, onSelectedLocation }) => {
    
-    const handleWeatherLocactionClick = city => {
+    const handleWeatherLocationClick = city => {
         console.log("handleWeatherLocationClick");
         onSelectedLocation(city);
     }    
@@ -18,31 +17,15 @@ const LocationList = ({ cities, onSelectedLocation }) => {
                 <WeatherLocation 
                     key={city} 
                     city={city} 
-                    onWeatherLocactionClick={() => handleWeatherLocactionClick(city)}/>))
+                    onWeatherLocationClick={() => handleWeatherLocationClick(city)}/>))
     );
     
-    return(
-    <div>
-         {strToComponents(cities)}
-    {/* <Container>
-        <Row>
-            <Col sm>
-                <Card>
-                    <Card.Body>
-                        <Card.Text>
-                            {strToComponents(cities)}
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-            </Col>
-            <Col sm>
-                <ForecastExtended></ForecastExtended>
-            </Col>
-        </Row>
-    </Container> */}
-    </div>);
-
+    return(   
+        <div>
+            {strToComponents(cities)}
+        </div>
+    )
+                     
 };
 
 LocationList.propTypes = {

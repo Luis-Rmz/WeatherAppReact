@@ -1,8 +1,13 @@
-/*import React, {Component} from 'react';
-
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 class ForecastExtended extends Component {
     render(){
-        return (<div>Jalo</div>);
+        const {city} = this.props;
+        return (<div>Forecast Extended para {city}</div>);
     }
 }
-export default ForecastExtended;*/
+ForecastExtended.propTypes = {
+    city : PropTypes.string.isRequired,
+}
+
+export default ForecastExtended;
